@@ -1,6 +1,9 @@
 # Archivos compilados de Java
 *.class
 
+# Directorio de compilación
+bin/
+
 # Archivos de IDE
 .idea/
 .vscode/

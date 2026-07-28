@@ -10,18 +10,21 @@ Este proyecto demuestra el uso de diferentes estructuras de datos en Java, inclu
 - **Modelo de datos**: Clase Cliente con validaciones
 - **Operaciones CRUD**: Crear, leer, actualizar y eliminar
 
-## 📁 Archivos del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
 Estructuradatos/
-├── ArreglosGeneral.java              # Manejo de arreglos estáticos
-├── ClienteModelo.java                # Modelo de datos Cliente
-├── Dinamico.java                     # Listas dinámicas (ArrayList)
-├── Estructura.java                   # Programa de demostración
-├── EstructuraDatos.java              # Arreglos estáticos alternativos
-├── ListaEstructurasDinamicas.java    # Sistema interactivo
-├── build.bat                         # Script de compilación
-├── run.bat                           # Script de ejecución con menú
+├── src/                          # Código fuente
+│   ├── ArreglosGeneral.java
+│   ├── ClienteModelo.java
+│   ├── Dinamico.java
+│   ├── Estructura.java
+│   ├── EstructuraDatos.java
+│   └── ListaEstructurasDinamicas.java
+├── bin/                          # Archivos compilados (generado)
+├── build.bat                     # Script de compilación
+├── run.bat                       # Script de ejecución con menú
+├── .gitignore
 └── README.md
 ```
 
@@ -68,7 +71,7 @@ build.bat
 
 ### Opción 2: Compilación manual
 ```bash
-javac -encoding UTF-8 ClienteModelo.java ArreglosGeneral.java Dinamico.java EstructuraDatos.java Estructura.java ListaEstructurasDinamicas.java
+javac -encoding UTF-8 -d bin src\ClienteModelo.java src\ArreglosGeneral.java src\Dinamico.java src\EstructuraDatos.java src\Estructura.java src\ListaEstructurasDinamicas.java
 ```
 
 ## ▶️ Ejecución
@@ -82,12 +85,12 @@ run.bat
 
 **Demostración de estructuras estáticas:**
 ```bash
-java Estructura
+java -cp bin Estructura
 ```
 
 **Sistema de gestión de clientes:**
 ```bash
-java ListaEstructurasDinamicas
+java -cp bin ListaEstructurasDinamicas
 ```
 
 ## 📚 Ejemplos de Uso
@@ -119,7 +122,7 @@ Menú interactivo que permite:
 - ✅ Métodos adicionales (buscar, eliminar, actualizar, estadísticas)
 - ✅ Interfaz de usuario mejorada con formato visual
 - ✅ Scripts de compilación y ejecución automatizados
-- ✅ Estructura simplificada sin carpetas
+- ✅ Estructura organizada con carpetas src/ y bin/
 
 ## 🔧 Convenciones de Código
 
@@ -131,7 +134,8 @@ El proyecto sigue las convenciones estándar de Java:
 ## 📝 Notas
 
 - Los archivos se compilan con codificación UTF-8 para soportar caracteres especiales
-- Los archivos .class se generan en el mismo directorio
+- El directorio `bin/` se crea automáticamente durante la compilación
+- Los archivos fuente están organizados en la carpeta `src/`
 - Se recomienda usar el script `build.bat` antes de ejecutar por primera vez
 - Todos los métodos públicos están documentados con JavaDoc
 

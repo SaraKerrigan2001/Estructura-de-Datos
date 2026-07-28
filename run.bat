@@ -40,14 +40,14 @@ echo ╔════════════════════════
 echo ║   Ejecutando Estructura.java          ║
 echo ╚════════════════════════════════════════╝
 echo.
-if not exist "Estructura.class" (
+if not exist "bin\Estructura.class" (
     echo ❌ Error: El programa no está compilado.
     echo    Ejecute 'build.bat' primero.
     echo.
     pause
     goto menu
 )
-java Estructura
+java -cp bin Estructura
 echo.
 echo ───────────────────────────────────────
 echo Presione cualquier tecla para volver al menú...
@@ -61,14 +61,14 @@ echo ╔════════════════════════
 echo ║   Sistema de Gestión de Clientes      ║
 echo ╚════════════════════════════════════════╝
 echo.
-if not exist "ListaEstructurasDinamicas.class" (
+if not exist "bin\ListaEstructurasDinamicas.class" (
     echo ❌ Error: El programa no está compilado.
     echo    Ejecute 'build.bat' primero.
     echo.
     pause
     goto menu
 )
-java ListaEstructurasDinamicas
+java -cp bin ListaEstructurasDinamicas
 echo.
 echo ───────────────────────────────────────
 echo Presione cualquier tecla para volver al menú...
