@@ -1,0 +1,22 @@
+# Archivos compilados de Java
+*.class
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de log
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak

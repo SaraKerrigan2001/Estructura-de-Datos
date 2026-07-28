@@ -1,34 +1,35 @@
 /**
- * Clase que maneja un arreglo estático de nombres de clientes.
- * Proporciona métodos para agregar, modificar y visualizar nombres.
+ * Clase que maneja un arreglo de nombres utilizando métodos de instancia.
+ * Esta clase demuestra el uso de arreglos con encapsulación adecuada.
  */
-public class ArreglosGeneral {
+public class EstructuraDatos {
+    
     private String[] listaNombres;
     private int cantidadElementos;
     private static final int CAPACIDAD_DEFAULT = 3;
-
+    
     /**
      * Constructor que inicializa el arreglo con capacidad por defecto (3 elementos).
      */
-    public ArreglosGeneral() {
+    public EstructuraDatos() {
         this.listaNombres = new String[CAPACIDAD_DEFAULT];
         this.cantidadElementos = 0;
     }
-
+    
     /**
      * Constructor que inicializa el arreglo con una capacidad específica.
      * 
      * @param capacidad La capacidad del arreglo
      * @throws IllegalArgumentException si la capacidad es menor o igual a 0
      */
-    public ArreglosGeneral(int capacidad) {
+    public EstructuraDatos(int capacidad) {
         if (capacidad <= 0) {
             throw new IllegalArgumentException("La capacidad debe ser mayor a 0");
         }
         this.listaNombres = new String[capacidad];
         this.cantidadElementos = 0;
     }
-
+    
     /**
      * Agrega un nombre al arreglo en la siguiente posición disponible.
      * 
@@ -50,7 +51,7 @@ public class ArreglosGeneral {
         cantidadElementos++;
         return true;
     }
-
+    
     /**
      * Establece un nombre en una posición específica del arreglo.
      * 
@@ -72,7 +73,7 @@ public class ArreglosGeneral {
             cantidadElementos = indice + 1;
         }
     }
-
+    
     /**
      * Obtiene el nombre en una posición específica.
      * 
@@ -86,35 +87,27 @@ public class ArreglosGeneral {
         }
         return listaNombres[indice];
     }
-
+    
     /**
-     * Imprime la información de todos los elementos del arreglo.
-     * Muestra solo los elementos que no son null.
+     * Imprime todos los datos almacenados en el arreglo.
+     * Muestra los elementos no nulos y marca los vacíos.
      */
-    public void imprimirInfo() {
+    public void imprimirDatos() {
         if (cantidadElementos == 0) {
-            System.out.println("No hay datos de clientes registrados.");
+            System.out.println("No hay datos almacenados.");
             return;
         }
         
-        System.out.println("=== Datos de Clientes ===");
+        System.out.println("=== Datos Almacenados ===");
         for (int i = 0; i < listaNombres.length; i++) {
             if (listaNombres[i] != null) {
-                System.out.println("Cliente " + (i + 1) + ": " + listaNombres[i]);
+                System.out.println("Datos [" + i + "]: " + listaNombres[i]);
             } else {
-                System.out.println("Cliente " + (i + 1) + ": [vacío]");
+                System.out.println("Datos [" + i + "]: [vacío]");
             }
         }
     }
-
-    /**
-     * Método alternativo para imprimir información.
-     * Llama internamente a imprimirInfo().
-     */
-    public void imprimirDos() {
-        this.imprimirInfo();
-    }
-
+    
     /**
      * Obtiene la cantidad de elementos actualmente almacenados.
      * 
@@ -123,7 +116,7 @@ public class ArreglosGeneral {
     public int getCantidadElementos() {
         return cantidadElementos;
     }
-
+    
     /**
      * Obtiene la capacidad total del arreglo.
      * 
@@ -132,7 +125,7 @@ public class ArreglosGeneral {
     public int getCapacidad() {
         return listaNombres.length;
     }
-
+    
     /**
      * Verifica si el arreglo está lleno.
      * 
@@ -141,7 +134,7 @@ public class ArreglosGeneral {
     public boolean estaLleno() {
         return cantidadElementos >= listaNombres.length;
     }
-
+    
     /**
      * Verifica si el arreglo está vacío.
      * 
@@ -150,7 +143,7 @@ public class ArreglosGeneral {
     public boolean estaVacio() {
         return cantidadElementos == 0;
     }
-
+    
     /**
      * Limpia todos los elementos del arreglo.
      */
@@ -160,25 +153,5 @@ public class ArreglosGeneral {
         }
         cantidadElementos = 0;
         System.out.println("Arreglo limpiado.");
-    }
-
-    /**
-     * Busca un nombre en el arreglo.
-     * 
-     * @param nombre El nombre a buscar
-     * @return El índice donde se encontró o -1 si no existe
-     */
-    public int buscarNombre(String nombre) {
-        if (nombre == null || nombre.trim().isEmpty()) {
-            return -1;
-        }
-        
-        String nombreBuscar = nombre.trim();
-        for (int i = 0; i < listaNombres.length; i++) {
-            if (listaNombres[i] != null && listaNombres[i].equalsIgnoreCase(nombreBuscar)) {
-                return i;
-            }
-        }
-        return -1;
     }
 }
